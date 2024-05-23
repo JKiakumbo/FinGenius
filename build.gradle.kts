@@ -36,4 +36,6 @@ dependencies {
     implementation("org.litote.kmongo:kmongo:4.5.1")
     implementation("org.litote.kmongo:kmongo-coroutine:4.5.1")
 
+    implementation("io.ktor:ktor-server-swagger:$ktor_version")
+
 }
