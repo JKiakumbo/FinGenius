@@ -1,18 +1,34 @@
 package jkiakumbo.me.models
 
 import kotlinx.serialization.Serializable
+import java.time.LocalDateTime
 
 @Serializable
 data class Invoice(
-    val dummy: Int = 0
+    val id: String? = null,
+    val type: String,
+    val invoiceDate: LocalDateTime,
+    val dueDate: LocalDateTime,
+    val invoiceNo: Int,
+    val partnerId: String,
+    val creditTerm: String,
+    val reference: String,
+    val invoiceTotal: Double,
+    val invoiceItem: List<InvoiceItem>
 )
 
 @Serializable
 data class InvoiceItem(
-    val dummy: Int = 0
+    val productName: String,
+    val quantity: Int,
+    val rate: Double,
+    val valueOfSupplies: Double,
+    val salesTax: Double,
+    val netAmount: Double
 )
 
 @Serializable
 data class InvoiceJson(
-    val dummy: Int = 0
+    val partner: Partner?,
+    val invoice: Invoice
 )
